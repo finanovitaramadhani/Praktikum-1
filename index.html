@@ -135,6 +135,24 @@
     </div>
   </div>
 
- 
+  <script>
+    $("#btnGet").click(function () {
+      const lokasi = $("#inputLokasi").val();
+      if (!lokasi) {
+        alert("Masukkan nama kota!");
+        return;
+      }
+
+      const urlapi = `https://api.weatherapi.com/v1/current.json?key=7da94d59077b4e95abe65557250710&q=${lokasi}&aqi=no`;
+
+      $.ajax({
+        url: urlapi,
+        method: "GET",
+        
+        
+      });
+    });
+  </script>
+
 </body>
 </html>
