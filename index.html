@@ -148,7 +148,16 @@
       $.ajax({
         url: urlapi,
         method: "GET",
-        
+        success: function (data) {
+          $("#suhuC").text(data.current.temp_c);
+          $("#suhuF").text(data.current.temp_f);
+          $("#kelembapan").text(data.current.humidity);
+          $("#negara").text(data.location.country);
+          $("#provinsi").text(data.location.region);
+          $("#kecamatan").text(data.location.name);
+          $("#longitude").text(data.location.lon);
+          $("#latitude").text(data.location.lat);
+        },
         
       });
     });
